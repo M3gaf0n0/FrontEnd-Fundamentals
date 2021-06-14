@@ -1,9 +1,19 @@
 h1 {
     color: #025157;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    color: #46484c;
+}
+
+h3 {
+    color: #46484c;
 }
 
 p {
     color: #46484c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p b {
