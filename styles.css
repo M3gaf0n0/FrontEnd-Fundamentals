@@ -18,3 +18,11 @@ form button {
 body {
     background-color: #fffbf7;
 }
+
+* { /* El selector (*) selecciona todos los elementos del HTML*/
+    box-sizing: border-box; 
+    /* box-sizing determina que propiedades se van a utilizar para calcular el tamaño de la caja */
+    /* border-box indica que si ponemos un width de 100px para la caja, y agregamos 10px de padding a cada lado, y 5px de margin a cada lado, estos se van a restar del width de 100px y nuestro contenido va a quedar reducido a 70px */
+    margin: 0;
+    padding: 0;
+}
