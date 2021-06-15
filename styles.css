@@ -24,6 +24,8 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 0;
+    height: 45px;
+    font-family: sans-serif;
 }
 
 .header > * {
@@ -40,18 +42,39 @@ body {
 
 .navbar {
     width: 70%;
-    text-align: left;
+    text-align: center;
     color: #025157;
     font-weight: 500;
 }
 
+.menu-item {
+    display: inline;
+    margin: 0 25px 0 25px;
+}
+
 .actions {
     width: 15%;
-    text-align: left;
+    text-align: right;
     font-size: 14px;
     font-weight: 600;
 }
 
+.actions > * {
+    margin: 0 10px 0 10px;
+}
+
 .logo > img {
     height: 100%;
+}
+
+.actions a {
+    color: #67b54b;
+}
+
+.actions button {
+    color: #fff;
+    background-color: #67b54b;
+    padding: 12px 14px 12px 14px;
+    border-radius: 5px;
+    border: 0;
 }
