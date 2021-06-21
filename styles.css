@@ -91,6 +91,7 @@ body {
     color: #343434;
     line-height: 1.5;
     margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .publish > form {
@@ -100,6 +101,7 @@ body {
 .publish > form p {
     color: #025157;
     margin-right: 18px;
+    font-family: sans-serif;
 }
 
 .promo {
@@ -107,4 +109,15 @@ body {
     width: 70%;
     margin: auto;
     align-items: center;
+}
+
+.explanatory-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explanatory-video img {
+    width: 120px;
+    margin-top: 10px;
 }
