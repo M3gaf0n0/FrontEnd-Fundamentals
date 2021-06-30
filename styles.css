@@ -1,80 +1,585 @@
-h1 {
+* {
+    /*Este selector abarca todos los elementos del HTML */
+    margin: 0; /*Sin margen*/
+    padding: 0; /*Sin marco*/
+    box-sizing: border-box; /* Para cualquier elemento que se defina, todo marco o margen será agregado dentro del borde, y por lo tanto la caja de contenido se va a reducir para absorber el marco o el margen*/
+  }
+  
+  body {
+    background-color: #fffbf7;
+    font-family: 'Open Sans', sans-serif;
+    /*background-image: url(https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80);*/
+    /*El background que va a aparecer es el segundo por el efecto cascada, siempre aparece el ultimo estilo de la hoja*/
+  }
+  
+  .navbar {
+    width: 65%; /*El ancho de este elemento será del 65% del tamaño total de la hoja*/
+    text-align: center; /*La alineación del texto en el eje horizontal*/
+    color: #025157; /*Color del texto dentro del elemento navbar*/
+    background-color: #fffbf7;
+    vertical-align: middle; /*La alineación deltexto en el eje vertical*/
+  }
+  
+  .actions {
+    text-align: right;
+    font-weight: 600; /*Especifica el peso o el grueso de la letra*/
+    font-size: 14px; /*Especifica el tamaño de la letra, puede especificarse en pixeles, em o rem*/
+  }
+  
+  .actions > * {
+    margin-right: 10px; /*Especifica el margen derecho*/
+    margin-left: 10px; /*Especifica el margen izquierdo*/
+  }
+  
+  .actions a {
+    color: #67b54b;
+  }
+  
+  .actions button {
+    color: #fff;
+    background-color: #67b54b; /*Especifica el color de fondo del elemento*/
+    padding-left: 12px 14px 12px 14px; /*Especifica el tamaño del marco en sentido de las agujas del reloj, iniciando por el marco superior*/
+    border: 0; /*Especifica que el elemento no debe tener bordes*/
+    border-radius: 5px; /*Especifica el tamaño del radio del borde*/
+  }
+  
+  main {
+    margin-top: 285px; /*Especifica el tamaño del margen superior*/
+    text-align: center;
+  }
+  
+  h1 {
     color: #025157;
-}
-
-p {
+    font-family: "Alegreya", serif; /*Especifica la familia de fuentes que se aplicaran al texto del elemento*/
+    font-size: 60px;
+    margin-bottom: 24px; /*Especifica el tamaño del margen inferior*/
+  }
+  
+  h4 {
     color: #46484c;
-}
-
-p b {
+    font-family: "Slabo 27px", serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  p {
     color: #8b8b8bcc;
-}
-
-form button {
+    margin-top: 15px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  form {
+    height: 55px; /*Especifica la altura del contenido de un elemento. El area de contenido esta dentro del padding, borde y margen del elemento*/
+  }
+  
+  main div form {
+    padding: 20px;
+    height: fit-content; /*La altura del elemento es la mínima para que todo el contenido quepa en el elemento sin hacer overflow*/
+  }
+  
+  input,
+  button {
+    height: 100%; /*La altura del elemento equivale al porcentaje escrito respecto al tamaño del elemento padre*/
+    border-radius: 8px;
+  }
+  
+  input {
+    border: 1px solid #b6b6b6; /*El borde del elemento tendrá un grosor de un pixel, línea solida con ese color*/
+    padding: 6px 20px; /*El elemento tendrá un marco superior e inferior de 6px y marcos laterales de 20px*/
+    width: 60%; /*El ancho del elemento equivaldrá al 60% del ancho del elemento padre*/
+    max-width: 250px; /*Si el 60% del ancho del elemento padre supera los 250px, el elemento trndrá una anchura máxima de 250px*/
+  }
+  
+  button {
     color: #fff;
     background-color: #025157;
-}
-
-body {
+    border: none;
+    border-top-left-radius: 0; /*El borde izquierdo superior no tendra radio*/
+    border-bottom-left-radius: 0; /*El borde izquierdo inferior no tendra radio*/
+    padding: 6px 20px;
+    margin-left: -10px; /*Como los valores son negativos, el elemento quedará encimado con el otro elemento con el que comparte linea*/
+  }
+  
+  main div form label {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  main div form button {
+    border-radius: 10px;
+  }
+  
+  figure {
+    margin-top: 32px;
+  }
+  
+  .promo {
+    display: flex; /*Indica que el elemento se mostrara como un elemento flexible*/
+    max-width: 70%;
+    margin: 100px auto; /*El elemento tendrá margen superior e inferior de 100px, mientras los margenes laterales seran calculados automaticamente por el navegador*/
+    align-items: center; /*Alinea los elementos en el eje secundario, en este caso, el eje vertical*/
+  }
+  
+  .explainVideo {
+    flex: 1; /*Define la habilidad del elemento para crecer en caso de ser necesario, como no tiene unidades el valor sirve como una proporcion. Dicta la cantidad de espacio disponible que el item puede tomar dentro del contenedor flex*/
+    /*Es una acotacion para flex-grow, flex-shrink y flex-basis. Como solo hay un valor, equivale a poner un valor de 0 a las ultimas 2 opciones por lo que el atajo calcula esos valores automáticamente*/
+    display: flex;
+    flex-direction: column; /*Establece cual es el eje principal de elemento, como aqui se definio columna, el eje principal es el vertical*/
+    align-items: center; /*Alinea los elementos en el eje secundario, en este caso el eje horizontal*/
+  }
+  
+  .explainVideo img {
+    width: 120px;
+    margin-top: 10px;
+  }
+  
+  .freeTrial {
+    flex: 1;
+  }
+  
+  .freeTrial h3 {
+    font-family: "Alegreya", serif;
+    font-size: 40px;
+    line-height: 48px; /*Establece la distancia entre las líneas de texto*/
+    color: #025157;
+  }
+  
+  .freeTrial > p {
+    font-size: 16px;
+    color: #343434;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .freeTrial > form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .freeTrial > form p {
+    color: #025157;
+    margin-bottom: 18px;
+  }
+  
+  .fixedHeader {
+    position: fixed; /*Establece como el elemento es posicionado dentro del documento. La posicion y las dimensiones son siempre relativas a su bloque contenedor inicial*/
     background-color: #fffbf7;
-}
-
-.header {
-    margin-top: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 0;
-    height: 45px;
-    font-family: sans-serif;
-}
-
-.header > * {
-    display: inline-block;
+    top: 0; /*Esto pega el elemento a la parte superior del documento*/
+    left: 0; /*Esto pega el elemento al margen izquierdo del documento*/
+    right: 0; /*Esto pega el elemento al margen derecho del documento*/
+  }
+  
+  .header {
+    margin: 15px 20px 0 20px;
+    font-size: 0; /*Esto ayuda a disminuir el espacio entre los elementos al convertir los espacios en 0*/
+  }
+  
+  .header > * {
+    /*El selector aplica para todos los hijos del elemento header*/
+    display: inline-block; /*Define que si el elemento se presenta como inline o block. En este caso los elementos se presentan uno al lado del otro sin presentar el elemento <br> para crear la barra de navegacion*/
     font-size: 16px;
     vertical-align: middle;
     height: 100%;
     line-height: 45px;
-}
-
-.logo {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .logo {
     width: 15%;
-}
-
-.navbar {
-    width: 70%;
-    text-align: center;
+    height: 100%;
+  }
+  
+  li {
+    display: inline; /*Los elementos no generan un salto de linea y solo ocupan el ancho necesario para cada uno*/
+    padding: 0 25px 0 25px;
+  }
+  
+  .caseStudies {
+    background-color: #a1d683;
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /*Define la posicion del elemento con respecto al eje principal, el valor space around aplica el mismo espacio alrededor de cada elemento sin importar su ancho.*/
+  }
+  
+  .caseStudies .overview {
+    flex: 2;
+    padding-right: 100px;
+  }
+  
+  .caseStudies .overview h2 {
+    font-family: "Alegreya", serif;
+    font-size: 51px;
+    line-height: 61px;
     color: #025157;
-    font-weight: 500;
-}
-
-.menu-item {
-    display: inline;
-    margin: 0 25px 0 25px;
-}
-
-.actions {
-    width: 15%;
-    text-align: right;
+  }
+  
+  .caseStudies .overview p {
+    color: #343434;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 1rem; /*La unidad rem se refiere al tamaño de fuente del elemento raiz, es decir el elemento HTML. Para conocer como la medida de un elemento de rem a px se multiplica por 0.0625*/
+  }
+  
+  .caseStudies .overview button {
+    font-size: 14px;
+    padding: 12px 12px 6px 12px;
+    border-radius: 8px;
+    height: 45px;
+    font-weight: 600;
+    margin-left: 0;
+  }
+  
+  .caseStudies .overview img {
+    width: 500px;
+    max-width: 100%;
+  }
+  
+  .caseStudies .stories-carousel {
+    flex: 1;
+  }
+  
+  .caseStudies .stories-carousel .card {
+    max-width: 370px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  .caseStudies .stories-carousel .card .card-media img {
+    width: 100%;
+    max-height: 16vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .caseStudies .stories-carousel .card .card-media figure {
+    margin-top: 0;
+  }
+  
+  .caseStudies .stories-carousel .card .card-media {
+    position: relative; /*El elemento se posiciona de acuerdo al flujo normal del documento, luego se desplaza en relacion a sí mismo basado en los valores top, right, bottom y left*/
+  }
+  
+  .caseStudies .stories-carousel .card .card-media .company {
+    position: absolute; /*EL elemento es removido del flujo normal del documento. Su posicion y dimensiones son relativas a su bloque contendor*/
+    bottom: -20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #f9da73;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .caseStudies .stories-carousel .card .card-media .company img {
+    max-width: 75%;
+  }
+  
+  .caseStudies .stories-carousel .card .card-body,
+  .caseStudies .stories-carousel .card .card-footer {
+    padding: 25px;
+  }
+  
+  .caseStudies .stories-carousel .card .card-body h4 {
+    color: #025157;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 12px;
+    font-family: 'Alegreya', serif;
+  }
+  
+  .caseStudies .stories-carousel .card .card-body h3 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .caseStudies .stories-carousel .card .card-body .results {
+    display: flex;
+    align-items: center;
+    color: #828282;
+  }
+  
+  .caseStudies .stories-carousel .card .card-body .results img {
+    width: 26px;
+    margin-right: 20px;
+  }
+  
+  .caseStudies .stories-carousel .card .card-body .results p {
+    margin-top: 0;
+  }
+  
+  .caseStudies .stories-carousel .card .card-footer {
+    margin-bottom: 20px;
+    background-color: unset; /*La keyword unset resetea la propiedad a su valor heredado si la propiedad se hereda de su padre o a su valor inicial si no*/
+    border-top: unset;
+  }
+  
+  .caseStudies .stories-carousel .card .card-footer button {
+    display: block;
+    margin-left: 0;
+    border-radius: 5px;
+    font-size: 13;
+    font-weight: 600;
+    padding: 12px 20px;
+    width: 100%;
+  }
+  
+  .features {
+    display: grid;
+    /*grid-template-columns: 300px 300px;*/
+    /*grid-template-columns: repeat(2, 300px);*/
+    /*grid-template-columns: 500px 1fr;*/
+    grid-template: repeat(2, 330px) / repeat(2, 1fr);
+    background-color: #025157;
+    padding: 5% 10%;
+  }
+  
+  .feat-art {
+    background-color: #fff;
+    margin: 0 15px 30px 15px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .features .feat-art .feat-content {
+    padding: 30px 20px 40px 40px;
+    flex: 2;
+  }
+  
+  .features .feat-art .feat-content > * {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  
+  .features .feat-art .feat-content img {
+    width: 50px;
+  }
+  
+  .features .feat-art .feat-content h3 {
+    font-size: 24px;
+    color: #343434;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .features .feat-art .feat-content p {
+    font-size: 16px;
+    color: #7e7e7e;
+    font-weight: 400;
+  }
+  
+  .features .feat-art .feat-content a {
+    font-size: 16px;
+    color: #67b54b;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .features .feat-art .feat-image {
+    flex: 1;
+    width: 40%;
+    position: relative;
+    right: -50px;
+    height: 80%;
+  }
+  
+  .features .feat-art .feat-image figure {
+    margin-top: 0;
+    height: 100%;
+  }
+  
+  .features .feat-art .feat-image img {
+    margin-top: 0;
+    height: 100%;
+  }
+  
+  .howDoesItWork {
+    background-color: #fffbf7;
+    padding: 5% 10%;
+    text-align: center;
+  }
+  
+  .howDoesItWork .title {
+    color: #025157;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: 'Alegreya', serif;
+    margin-bottom: 8px;
+  }
+  
+  .howDoesItWork .description {
+    max-width: 60%;
+    color: #46484c;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+  
+  .howDoesItWork .description a {
+    color: #67b54b;
+    text-decoration: none;
+  }
+  
+  .howDoesItWork button {
     font-size: 14px;
     font-weight: 600;
-}
-
-.actions > * {
-    margin: 0 10px 0 10px;
-}
-
-.logo > img {
-    height: 100%;
-}
-
-.actions a {
-    color: #67b54b;
-}
-
-.actions button {
-    color: #fff;
-    background-color: #67b54b;
-    padding: 12px 14px 12px 14px;
+    padding: 12px 12px 6px 12px;
+    height: 45px;
+    margin-left: 0;
+    border-radius: 8px;
+    margin-top: 6px;
+  }
+  
+  .howDoesItWork .steps {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .howDoesItWork .steps .card-step {
+    background-color: #fff;
+    border: 1px solid #dadada;
     border-radius: 5px;
-    border: 0;
-}
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: left;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-image {
+    position: relative;
+    height: 350px;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-image .card-step-icon {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 21px;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-image .card-step-bg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-body {
+    padding: 25px;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-body h3 {
+    font-size: 30px;
+    line-height: 36px;
+    font-family: 'Alegreya', serif;
+    color: #025157;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-body p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #46484c;
+    font-weight: 400;
+    height: 85px;
+    margin-bottom: 16px;
+  }
+  
+  .howDoesItWork .steps .card-step .card-step-body a {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+    color: #67b54b;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  /** dispositivos móviles en vista viewport (vertical) */
+  @media (max-width: 575px) {
+    .navbar, .actions {
+      display: none;
+    }
+  
+    main {
+      margin-top: 80px;
+    }
+  
+    h1{
+      font-size: 30px;
+    }
+  
+    .banner > img {
+      width: 100%;
+    }
+  
+    .main > form {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .main > form > div {
+      height: 50px;
+      margin-top: 10px;
+    }
+  
+    .main > form > div > input {
+      width: 65%;
+    }
+  
+    .promo {
+      flex-direction: column;
+      max-width: 90%;
+    }
+  
+    .explainVideo > video {
+      width: 100%;
+    }
+  
+    .freeTrial {
+      margin-top: 10px;
+    }
+  
+    .publish > h3 {
+      font-size: 25px;
+      line-height: 1.2;
+    }
+  
+    .features {
+      grid-template: repeat(4, 1fr) / 1fr;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .feat-image {
+      display: none;
+    }
+  }
+  /** dispositivos pequeños en vista landscape (horizontal) */
+  @media (min-width: 576px) and (max-width: 767px) {
+    
+  }
+  /** dispositivos medianos (tablets) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    
+  }
+  /** dispositivos grandes (desktops) */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    
+  }
+  /** dispositivos extra grandes (monitores grandes, tvs) */
+  @media (min-width: 1200px) {
+    
+  }
+  
