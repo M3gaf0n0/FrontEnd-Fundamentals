@@ -13,13 +13,13 @@
   }
   
   .navbar {
-    width: 65%; /*El ancho de este elemento será del 65% del tamaño total de la hoja*/
+    /*width: 65%; El ancho de este elemento será del 65% del tamaño total de la hoja*/
     text-align: center; /*La alineación del texto en el eje horizontal*/
     color: #025157; /*Color del texto dentro del elemento navbar*/
     background-color: #fffbf7;
     vertical-align: middle; /*La alineación deltexto en el eje vertical*/
   }
-  
+
   .actions {
     text-align: right;
     font-weight: 600; /*Especifica el peso o el grueso de la letra*/
